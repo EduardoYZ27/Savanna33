@@ -12,7 +12,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $categoria = Categoria::all();
+        return view('categoria.index', compact('categoria'));
     }
 
     /**
