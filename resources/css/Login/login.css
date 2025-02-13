@@ -1,0 +1,82 @@
+/* Imagen de fondo */
+body {
+    background: url("/img/fondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Capa de opacidad */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+    z-index: 1;
+}
+
+/* Asegurar que el formulario esté por encima */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilo del formulario completamente negro */
+.card {
+    background: black !important; /* Fondo negro sólido */
+    border-radius: 10px;
+    border: 1px solid #BDB76B; /* Borde color caqui */
+    color: white; /* Letras en blanco */
+}
+
+/* Cambia el color del header */
+.card-header {
+    background-color: #BDB76B !important; /* Color caqui */
+    border-bottom: 1px solid #BDB76B;
+}
+
+/* Texto del header en negro */
+.card-header h4 {
+    color: black !important;
+}
+
+/* Campos del formulario */
+.form-control {
+    background: black !important; /* Fondo negro */
+    color: white !important; /* Texto blanco */
+    border: 1px solid #BDB76B !important; /* Borde color caqui */
+}
+
+/* Placeholder en color más claro */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Estilo del botón */
+.btn-primary {
+    background-color: #BDB76B !important;
+    border: none;
+    color: black !important; /* Texto negro */
+}
+
+/* Cambia el color al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background-color: #A9A056 !important;
+}
+
+/* Enlaces */
+.card-footer a {
+    color: #BDB76B !important;
+    text-decoration: none;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Asegurar que los textos sean blancos */
+label, small {
+    color: white !important;
+}
