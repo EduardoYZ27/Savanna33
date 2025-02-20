@@ -28,3 +28,11 @@ Route::get('/inicio', function () {
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/ventas', function () {
+    return view('Ventas.ventas');
+})->name('ventas');
+
+Route::get('/registro', function () {
+    return view('Registro.registro');
+})->name('registro');

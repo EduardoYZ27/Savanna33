@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #c8a74b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e0d8b0;
+}
+
+.logo {
+    width: 100px;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+}
+
+/* Títulos */
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff;
+    color: #000;
+}
+
+th, td {
+    border: 1px solid #c8a74b;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #c8a74b;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Botón menú */
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #c8a74b;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-button .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+}

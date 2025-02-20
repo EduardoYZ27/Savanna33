@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../img/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    width: 400px;
+    text-align: center;
+    border: 1px solid #ddd; /* Borde sutil */
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #C2A24B;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Fondo claro para los inputs */
+}
+
+.btn {
+    background-color: #C2A24B;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #A88A3D;
+}
+
+.register-footer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555; /* Color de texto más oscuro */
+}
+
+.register-footer a {
+    color: #C2A24B;
+    text-decoration: none;
+}
+
+.register-footer a:hover {
+    text-decoration: underline;
+}
