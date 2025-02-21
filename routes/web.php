@@ -23,6 +23,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrdenController;
 
 Route::get('/', function () {
     return view('index');
@@ -86,3 +87,13 @@ Route::get('/homeInventario/totalComprasInsumo/{fecha}/{ID_Insumo}', [Inventario
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+
+// Ruta para mostrar la vista de órdenes
+Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index');
+
+// Ruta para ver la orden de una mesa específica
+Route::get('/ordenes/mesa1', function () {
+    return view('Ordenes.darmesa');
+})->name('ordenes.darmesa');
+

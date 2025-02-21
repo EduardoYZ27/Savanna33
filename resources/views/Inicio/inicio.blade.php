@@ -18,25 +18,25 @@
         <h2>Restaurante-bar</h2>
         <h3>Selecciones más frecuentes</h3>
         <section class="options">
-            <div class="option">
-                <img src="compras.jpg" alt="Compras">
-                <h4>SECCIÓN DE COMPRAS</h4>
-                <p>ADMINISTRA TUS COMPRAS DE INSUMOS</p>
-                <button class="btn">IR A COMPRAS</button>
-            </div>
-            <div class="option">
-                <img src="inventario.jpg" alt="Inventario">
-                <h4>SECCIÓN DE INVENTARIO</h4>
-                <p>ADMINISTRA TU INVENTARIO</p>
-                <button class="btn">IR A INVENTARIO</button>
-            </div>
-            <div class="option">
-                <img src="ventas.jpg" alt="Ventas">
-                <h4>SECCIÓN DE VENTAS</h4>
-                <p>ADMINISTRA TUS VENTAS</p>
-                <button class="btn">IR A VENTAS</button>
-            </div>
-        </section>
+    <div class="option">
+        <img src="/img/compras.jpg" alt="Compras" class="option-img">
+        <h4>SECCIÓN DE COMPRAS</h4>
+        <p>ADMINISTRA TUS COMPRAS DE INSUMOS</p>
+        <button class="btn">IR A COMPRAS</button>
+    </div>
+    <div class="option">
+        <img src="/img/inventario.jpg" alt="Inventario" class="option-img">
+        <h4>SECCIÓN DE INVENTARIO</h4>
+        <p>ADMINISTRA TU INVENTARIO</p>
+        <button class="btn">IR A INVENTARIO</button>
+    </div>
+    <div class="option">
+        <img src="/img/ventas.jpg" alt="Ventas" class="option-img">
+        <h4>SECCIÓN DE VENTAS</h4>
+        <p>ADMINISTRA TUS VENTAS</p>
+        <button class="btn">IR A VENTAS</button>
+    </div>
+</section>
     </main>
 </body>
 </html>
