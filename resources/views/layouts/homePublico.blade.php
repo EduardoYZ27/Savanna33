@@ -48,7 +48,7 @@
    
 
 <footer>
-    <p>&copy; 2024 Taquería Chester</p>
+    <p>&copy; 2025 SAVANNA 33</p>
     <ol>
       <a href="{{url('homeUbicacion')}}">Ubicación</a>
       <br>
