@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrdenController;
 
  /*
  |--------------------------------------------------------------------------
@@ -29,6 +30,16 @@ Route::get('/inicio', function () {
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
+
+// Ruta para mostrar la vista de órdenes
+Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index');
+
+// Ruta para ver la orden de una mesa específica
+Route::get('/ordenes/mesa1', function () {
+    return view('Ordenes.darmesa');
+})->name('ordenes.darmesa');
+
+
 Route::get('/ventas', function () {
     return view('Ventas.ventas');
 })->name('ventas');
@@ -36,3 +47,11 @@ Route::get('/ventas', function () {
 Route::get('/registro', function () {
     return view('Registro.registro');
 })->name('registro');
+// Ruta para mostrar la vista de órdenes
+Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index');
+
+// Ruta para ver la orden de una mesa específica
+Route::get('/ordenes/mesa1', function () {
+    return view('Ordenes.darmesa');
+})->name('ordenes.darmesa');
+

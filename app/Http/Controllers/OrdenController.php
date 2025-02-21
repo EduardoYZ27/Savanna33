@@ -11,9 +11,9 @@ class OrdenController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
+{
+    return view('Ordenes.Index'); // Retorna la vista ubicada en resources/views/Ordenes/Index.blade.php
+}
 
     /**
      * Show the form for creating a new resource.
