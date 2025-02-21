@@ -40,12 +40,20 @@ header {
 }
 
 
-/* Título principal */
-.title {
-    color: #000000;
-    font-size: 26px;
-    margin-top: 20px;
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre el título y el botón */
+    margin-bottom: 10px;
 }
+
+.img-atras {
+    width: 40px; /* Ajusta el tamaño del botón de regreso */
+    cursor: pointer;
+    margin-left: -39cm;
+}
+
 
 /* Sección de órdenes */
 .orders {

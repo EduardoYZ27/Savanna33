@@ -31,7 +31,12 @@
     </div>
 </header>
 
-<h2 class="title">BIENVENIDO A LA SECCIÓN DE ÓRDENES</h2>
+<div class="title-container">
+    <h2 class="title">BIENVENIDO A LA SECCIÓN DE ÓRDENES</h2>
+    <a href="{{ url('homeMenu') }}">
+        <img src="{{ asset('imagenes/regresar.jpg') }}" alt="Regresar" class="img-atras">
+    </a>
+</div>
 
 <div style="padding: 20px;" class="row">
     <div class="col-md-10 d-flex flex-wrap justify-content-center">
