@@ -13,27 +13,11 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     
-    <style>
-        .btn-logout {
-            background-color: #EC5F20;
-            color: white;
-            position: absolute;
-            top: 30px;
-            left: 1300px;
-        }
-
-    </style>
+   
 </head>
 
 <body>
-    <header>
-        <img src="{{ asset('imagenes/LOGO_TAQ_SINFONDO.png') }}" alt="Logo de Taquería Chester" class="logo">
-        <h1>Taquería Chester</h1>
-        <p>¡En precio y calidad somos la mejor opción!</p>
-    </header>
-
-    <h2 class="title-menu">SECCIONES MÁS FRECUENTES</h2>
-    <br>
+    
     
     @if (Auth::check())
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -47,11 +31,10 @@
     @yield('content')
 
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
     
     <footer>
-        <p>&copy; 2024 Taquería Chester</p>
+        <p>&copy; 2025 SAVANNA 33</p>
     </footer>
 </body>
 </html>

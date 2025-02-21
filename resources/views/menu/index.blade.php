@@ -1,73 +1,70 @@
 @extends('layouts.homeMenu')
 
 @section('content')
-<!-- Agrega las referencias a Bootstrap y jQuery antes de cerrar el cuerpo del documento -->
+
+<head>
+    <link rel="stylesheet" href="{{ asset('css/Menu/Inicio.css') }}">
+</head>
+
+<header>
+    <img src="{{ asset('imagenes/fondo.jpg') }}" alt="Logo SAVANNA" class="logo">
+    <div class="header-text">
+        <h1>SAVANNA 33</h1>
+        <p>¡En precio y calidad somos la mejor opción!</p>
+    </div>
+    <nav>
+        <button class="menu-button" id="menuToggle">&#9776;</button>
+    </nav>
+    
+    <!-- Menú desplegable -->
+    <div class="menu-card-sec" id="menuPrincipal-sec">
+        <a href="javascript:void()" onclick="closeMenu()"></a>
+        <a href="{{ url('homeMenu') }}"><i class="fa fa-home"></i> Inicio</a>
+        <a href="{{ url('homeInsumosCompras') }}"><i class="fa fa-shopping-cart"></i> Compras</a>
+        <a href="{{ url('homeInventario') }}"><i class="fa fa-list-alt"></i> Inventario</a>
+        <a href="{{ url('homeOrden') }}"><i class="fa fa-dollar"></i> Órdenes</a>
+        <a href="{{ url('homeVenta') }}"><i class="fa fa-dollar"></i> Ventas</a>
+        <a href="{{ url('home') }}"><i class="fa fa-archive"></i> Insumos</a>
+        <a href="{{ url('homeProductos') }}"><i class="fa fa-cubes"></i> Productos</a>
+        <a href="{{ url('homeCategorias') }}"><i class="fa fa-tags"></i> Categorías</a>
+        <a href="{{ url('homeUnidadMedidas') }}"><i class="fa fa-balance-scale"></i> Unidades de medida</a> 
+    </div>
+</header>
+
+<main>
+    <h2>Restaurante-bar</h2>
+    <h3>Selecciones más frecuentes</h3>
+
+    <div class="row">
+        <div class="col-md-10 d-flex justify-content-center">
+            <div class="options">
+                <div class="option">
+                    <img src="{{ asset('imagenes/compras.jpg') }}" alt="Compras" class="option-img">
+                    <h4>SECCIÓN DE COMPRAS</h4>
+                    <p>ADMINISTRA TUS COMPRAS DE INSUMOS</p>
+                    <a href="{{url('homeInsumosCompras')}}" class="btn">IR A COMPRAS</a>
+                </div>
+
+                <div class="option">
+                    <img src="{{ asset('imagenes/inventario.jpg') }}" alt="Inventario" class="option-img">
+                    <h4>SECCIÓN DE INVENTARIO</h4>
+                    <p>ADMINISTRA TU INVENTARIO</p>
+                    <a href="{{url('homeInventario')}}" class="btn">IR A INVENTARIO</a>
+                </div>
+
+                <div class="option">
+                    <img src="{{ asset('imagenes/ventas.jpg') }}" alt="Ventas" class="option-img">
+                    <h4>SECCIÓN DE VENTAS</h4>
+                    <p>ADMINISTRA TUS VENTAS</p>
+                    <a href="{{url('homeVenta')}}" class="btn">IR A VENTAS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Agrega los scripts para el menú -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('js/menuSecciones.js') }}"></script>
-
-<div class="row">
-    <!-- Botón de la hamburguesa -->
-    <button class="navbar-toggler-sec" type="button" data-toggle="collapse" data-target="#menuPrincipal-sec" aria-controls="menuPrincipal-sec" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">&#9776;</span>
-    </button>
-
-    <!-- Menú hamburguesa -->
-    <div class="col-md-auto">
-        <div class="card menu-card-sec" id="menuPrincipal-sec">
-            <a href="javascript:void()" onclick="closeMenu()"></a>
-            <a href="{{ url('homeMenu') }}"><i class="fa fa-home"></i> Inicio</a>
-            <a href="{{ url('homeInsumosCompras') }}"><i class="fa fa-shopping-cart"></i> Compras</a>
-            <a href="{{ url('homeInventario') }}"><i class="fa fa-list-alt"></i> Inventario</a>
-            <a href="{{ url('homeOrden') }}"><i class="fa fa-dollar"></i> Ordenes</a>
-            <a href="{{ url('homeVenta') }}"><i class="fa fa-dollar"></i> Ventas</a>
-            <a href="{{ url('home') }}"><i class="fa fa-archive"></i> Insumos</a>
-            <a href="{{ url('homeProductos') }}"><i class="fa fa-cubes"></i> Productos</a>
-            <a href="{{ url('homeCategorias') }}"><i class="fa fa-tags"></i> Categorías</a>
-             <a href="{{ url('homeUnidadMedidas') }}"><i class="fa fa-balance-scale"></i> Unidades de medida</a> 
-        </div>
-    </div>
-
-    <div class="col-md-10 d-flex">
-        <!-- Aquí van las secciones de tu contenido -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-image"> <img src="{{ asset('imagenes/compras.jpg') }}" alt="SECCION DE COMPRAS" class="img-fluid" style="margin: 1rem;">
-                    </div>
-                    <h5 class="card-title">SECCIÓN DE COMPRAS</h5>
-                    <p class="card-text">Administra tus compras de insumos.</p>
-                    <a href="{{url('homeInsumosCompras')}}" class="btn btn-primary">Ir a compras :D</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-image"> <img src="{{ asset('imagenes/inventario.jpg') }}" alt="SECCION DE INVENTARIO" class="img-fluid" style="margin: 1rem;">
-                    </div>
-                    <h5 class="card-title">SECCIÓN DE INVENTARIO</h5>
-                    <p class="card-text">Administra tu inventario.</p>
-                    <a href="{{url('homeInventario')}}" class="btn btn-primary">Ir a Inventario :D</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-image"> <img src="{{ asset('imagenes/ventas.jpg') }}" alt="SECCION DE VENTAS" class="img-fluid" style="margin: 1rem;">
-                    </div>
-                    <h5 class="card-title">SECCIÓN DE VENTAS</h5>
-                    <p class="card-text">Administra tus ventas.</p>
-                    <a href="{{url('homeVenta')}}" class="btn btn-primary">Ir a ventas :D</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 @endsection

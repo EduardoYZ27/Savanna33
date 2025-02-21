@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -7,6 +7,7 @@ body {
     text-align: center;
 }
 
+/* Estilos del Header */
 header {
     display: flex;
     align-items: center;
@@ -24,13 +25,13 @@ header {
 /* Contenedor del texto centrado */
 .header-text {
     text-align: center;
-    flex-grow: 1; /* Permite que el texto ocupe el espacio central */
+    flex-grow: 1;
 }
 
 .header-text h1 {
     margin: 0;
     font-size: 40px;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .header-text p {
@@ -39,85 +40,62 @@ header {
     color: white;
 }
 
+/* Contenedor Principal */
+.container {
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1cm;
+}
 
-/* Título principal */
-.title {
-    color: #000000;
-    font-size: 26px;
+/* Botón de Regresar */
+.img-atras {
+    display: inline-block;
+    width: 40px;
+    margin-left: -24.3cm;
+    margin-top: 0.1cm;
+    position: relative;
+}
+
+/* Tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-/* Sección de órdenes */
-.orders {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra los elementos */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1400px; /* Ajusta el ancho total para 4 tarjetas por fila */
-    margin: auto;
-    transform: translateX(120px); /* Mueve todo el contenedor más a la derecha */
+.table th {
+    background: #d5ac67;
+    color: black;
+    padding: 10px;
 }
 
-/* Tarjetas de orden */
-.order-card {
-    position: relative; 
-    background: white;
-    border: 3px solid #d5ac67;
-    border-radius: 10px;
-    width: calc(25% - 20px); /* 4 tarjetas por fila */
-    height: 355px; /* Se redujo la altura */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
-
-.order-card:hover {
-    transform: scale(1.05);
-}
-
-/* Imagen dentro de la tarjeta */
-.option-img {
-    width: 100%;
-    height: 180px; /* Se redujo la altura de la imagen */
-    object-fit: cover; /* Evita distorsión */
-    border-radius: 10px;
-}
-
-/* Número de la mesa */
-.order-number {
-    position: absolute;
-    top: 170px; /* Ajustado para que no quede sobre la imagen */
-    left: 140px; 
-    background: #000000;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 /* Botón */
 .btn {
-    background: #000000;
+    background: green;
     color: white;
-    padding: 10px;
     border: none;
+    padding: 8px;
+    width: 15%;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: -23cm;
 }
 
 .btn:hover {
-    background: #d1b583;
+    background: #d5ac67;
 }
+
 
 /* Estilo del menú desplegable */
 .menu-card-sec {

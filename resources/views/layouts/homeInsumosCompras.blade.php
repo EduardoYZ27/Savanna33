@@ -27,15 +27,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <header>
-        <a href="{{ url('homeOrden') }}">
-        <img src="{{ asset('imagenes/LOGO_TAQ_FONDO.png') }}" alt="Logo de Taquería Chester" class="logo">
-        </a>
-        <h1>Taquería Chester</h1>
-        <p>¡En precio y calidad somos la mejor opción!</p>
-    </header>
+    
 
-    <h2 class="title-menu">SECCIONES MÁS FRECUENTES</h2>
+    
 
         @yield('content')
         <!-- Bootstrap JavaScript Libraries -->
@@ -57,7 +51,7 @@
    
 
 <footer>
-    <p>&copy; 2024 Taquería Chester</p>
+<p>&copy; 2025 SAVANNA 33</p>
 </footer>
 
 </body>
