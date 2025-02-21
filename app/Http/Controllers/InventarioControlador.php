@@ -51,6 +51,7 @@ class InventarioControlador extends Controller
 
         return view('inventario.index',compact('inventario','insumos','insumosCompras','unidadMedidas','idInventario','fechaInventarioActual','idAntInventario','fechaActual'));
     }
+
     public function inventarioInicial(Request $request)
     {
         $this->store();
@@ -129,6 +130,7 @@ class InventarioControlador extends Controller
         }               
 
     }
+
     public function storeInventarioInsumo($ID_Inventario,$ID_Insumo,$cantidadSistema,$ID_UnidadMedida)
     {
         $inventarioInsumos = new InventarioInsumo;
@@ -141,6 +143,7 @@ class InventarioControlador extends Controller
         $inventarioInsumos->ID_Inventario = $ID_Inventario;
         $inventarioInsumos->save();
     }
+
     public function updateInventarioInsumo($ID_Inventario, $ID_Insumo, $cantidadSistema, $ID_UnidadMedida)
     {
         $inventarioInsumos = InventarioInsumo::where('ID_Inventario', $ID_Inventario)
@@ -211,7 +214,7 @@ class InventarioControlador extends Controller
                     ->pluck('id'); // Obtenemos los IDs de las compras
         foreach ($compras as $compraId) {
             // Paso 3: Obtenido ese id de la compra, busca si en insumoscompras existe un registro 
-            // con el id de la compra y del insumo y si es así, tree la cantidad y el id de la unidad de medida
+            // con el id de la compra y del insumo y si es así, trae la cantidad y el id de la unidad de medida
             $insumoCompra = DB::table('insumoscompras')
                             ->where('ID_Compra', $compraId)
                             ->where('ID_Insumo', $ID_Insumo)
@@ -256,6 +259,7 @@ class InventarioControlador extends Controller
 
         return $this->convertirUM($ID_Insumo,$arraySuma);
     }
+
     public function totalDirefencia($ID_Insumo,$cantidadSistema,$ID_UnidadMedida1, $cantidadFisica,$ID_UnidadMedida2)
     {
         $array1 = [
@@ -286,7 +290,10 @@ class InventarioControlador extends Controller
             4 => 1       //'ml'
         ];
 
-        $suma_total = ($arrayConsulta['cantidad'] * $conversion[$arrayConsulta['ID_Unidad_Medida']])+($arraySuma['cantidad'] * $conversion[$arraySuma['ID_Unidad_Medida']]);
+        // Validar si el índice existe en el arreglo de conversion
+        $conversionFactor = isset($conversion[$arrayConsulta['ID_Unidad_Medida']]) ? $conversion[$arrayConsulta['ID_Unidad_Medida']] : 0;
+
+        $suma_total = ($arrayConsulta['cantidad'] * $conversionFactor) + ($arraySuma['cantidad'] * $conversionFactor);
 
         $array = [
             'cantidad' => $suma_total,
@@ -295,6 +302,7 @@ class InventarioControlador extends Controller
 
         return $array;
     }
+
     public function Resta($arraySuma, $arrayConsulta)
     {
         // Definir un factor de conversión para cada unidad de medida a una unidad estándar
@@ -306,7 +314,10 @@ class InventarioControlador extends Controller
             4 => 1       //'ml'
         ];
 
-        $resta_total = ($arraySuma['cantidad'] * $conversion[$arraySuma['ID_Unidad_Medida']])-($arrayConsulta['cantidad'] * $conversion[$arrayConsulta['ID_Unidad_Medida']]);
+        // Validar si el índice existe en el arreglo de conversion
+        $conversionFactor = isset($conversion[$arrayConsulta['ID_Unidad_Medida']]) ? $conversion[$arrayConsulta['ID_Unidad_Medida']] : 0;
+
+        $resta_total = ($arraySuma['cantidad'] * $conversionFactor) - ($arrayConsulta['cantidad'] * $conversionFactor);
 
         $array = [
             'cantidad' => $resta_total,
@@ -315,6 +326,7 @@ class InventarioControlador extends Controller
 
         return $array;
     }
+
     public function convertirUM($ID_Insumo,$array)
     {
         // Definir un factor de conversión para cada unidad de medida a una unidad estándar
@@ -326,13 +338,12 @@ class InventarioControlador extends Controller
         ];
 
         $insumo = DB::table('insumos')->where('id', $ID_Insumo)->first();
-        $cantidad = $conversion[$insumo->ID_UnidadMedida];
+        $cantidad = isset($conversion[$insumo->ID_UnidadMedida]) ? $conversion[$insumo->ID_UnidadMedida] : 1;
 
         $cant_convertida = $array['cantidad'] / $cantidad;
         
         return $cant_convertida;
     }
-
 
     /**
      * Show the form for creating a new resource.
