@@ -19,10 +19,15 @@
     <div class="alert alert-danger">{{ $errors->first('nombre') }}</div>
       @endif
 
-        <div class="mb-3">
-            <label for="" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="" value="{{ old('nombre') }}" required/>
-        </div>
+      <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" 
+        placeholder="Ingrese solo texto" 
+        value="{{ old('nombre') }}" 
+        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+        title="Solo se permiten letras y espacios" 
+        required/>
+</div>
 
         <div class="mb-3">
             <label for="" class="form-label">Descripción:</label>

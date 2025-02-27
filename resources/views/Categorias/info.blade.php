@@ -14,10 +14,15 @@
         @csrf 
         @method('PUT')
       <div class="modal-body">
-        <div class="mb-3">
-            <label for="" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="" value="{{$categoria->nombre}}" required/>
-        </div>
+      <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" 
+        placeholder="Ingrese el nombre" 
+        value="{{$categoria->nombre}}" 
+        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" 
+        title="Solo se permiten letras y espacios" 
+        required/>
+</div>
         
       </div>
       <div class="modal-footer">

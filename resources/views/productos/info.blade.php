@@ -15,14 +15,24 @@
         @method('PUT')
       <div class="modal-body">
       <div class="mb-3">
-            <label for="" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="" value="{{$productos->nombre}}" required/>
-        </div>
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" 
+        placeholder="Ingrese el nombre" 
+        value="{{$productos->nombre}}" 
+        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" 
+        title="Solo se permiten letras y espacios" 
+        required/>
+</div>
 
         <div class="mb-3">
-            <label for="" class="form-label">Precio:</label>
-            <input type="text" class="form-control" name="precio" id="precio" aria-describedby="helpId" placeholder="" value="{{$productos->precio}}" required/>
-        </div>
+    <label for="precio" class="form-label">Precio:</label>
+    <input type="number" class="form-control" name="precio" id="precio" 
+        placeholder="Ingrese el precio" 
+        value="{{$productos->precio}}" 
+        min="0" 
+        step="0.01" 
+        required/>
+</div>
 
         <div class="mb-3">
             <label for="" class="form-label">Categoria:</label>

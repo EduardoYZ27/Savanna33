@@ -22,11 +22,7 @@
 
     <body>
 
-    <header>
-        <img src="{{ asset('imagenes/LOGO_TAQ_FONDO.png') }}" alt="Logo de Taquería Chester" class="logo">
-        <h1>Taquería Chester</h1>
-        <p>¡En precio y calidad somos la mejor opción!</p>
-    </header>
+ 
 
         @yield('content')
         <!-- Bootstrap JavaScript Libraries -->

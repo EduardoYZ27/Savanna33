@@ -35,22 +35,56 @@
            
         </div>
       
-      <div class="mb-3">
-            <label for="" class="form-label">Cantidad:</label>
-            <input type="number" class="form-control" name="cantidad" id="cantidad" aria-describedby="helpId" placeholder="" min="0" required/>
-        </div>
+        <div class="mb-3">
+    <label for="cantidad" class="form-label">Cantidad:</label>
+    <input type="number" class="form-control" name="cantidad" id="cantidad" 
+        placeholder="Ingrese la cantidad" 
+        min="0" step="1" 
+        title="Solo se permiten números enteros positivos" 
+        required>
+</div>
 
         <label for="">Ingresa alguno de los costos:</label>
 
         <div class="mb-3">
-            <label for="" class="form-label">Costo Unitario:</label>
-            <input type="number" step="0.01" class="form-control" name="costo" id="costo" aria-describedby="helpId" placeholder="" min="0"/>
-        </div>
+    <label for="costo" class="form-label">Costo Unitario:</label>
+    <input type="number" step="0.01" class="form-control" name="costo" id="costo" 
+        placeholder="Ingrese el costo unitario" 
+        min="0" 
+        pattern="^\d+(\.\d{1,2})?$"
+        title="Ingrese un número válido con hasta dos decimales" 
+        required>
+</div>
 
-        <div class="mb-3">
-            <label for="" class="form-label">Costo Total:</label>
-            <input type="number" step="0.01" class="form-control" name="costoT" id="costoT" aria-describedby="helpId" placeholder="" min="0"/>
-        </div>
+
+<div class="mb-3">
+    <label for="costoT" class="form-label">Costo Total:</label>
+    <input type="number" step="0.01" class="form-control" name="costoT" id="costoT" 
+        placeholder="Costo total" 
+        min="0" readonly>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const cantidadInput = document.getElementById("cantidad");
+        const costoInput = document.getElementById("costo");
+        const costoTotalInput = document.getElementById("costoT");
+
+        function calcularCostoTotal() {
+            const cantidad = parseFloat(cantidadInput.value) || 0;
+            const costoUnitario = parseFloat(costoInput.value) || 0;
+            const total = cantidad * costoUnitario;
+
+            // Actualizar el campo de Costo Total con 2 decimales
+            costoTotalInput.value = total.toFixed(2);
+        }
+
+        // Escuchar cambios en los campos de cantidad y costo unitario
+        cantidadInput.addEventListener("input", calcularCostoTotal);
+        costoInput.addEventListener("input", calcularCostoTotal);
+    });
+</script>
         
       </div>
       <div class="modal-footer">
