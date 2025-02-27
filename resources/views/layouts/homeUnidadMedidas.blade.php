@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>TAQUERIA CHESTER</title>
+        <title>SAVANNA 33</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
