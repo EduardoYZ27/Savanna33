@@ -59,12 +59,11 @@ header {
 .orders {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra los elementos */
+    justify-content: center;
     gap: 20px;
     padding: 20px;
-    max-width: 1400px; /* Ajusta el ancho total para 4 tarjetas por fila */
+    max-width: 1400px;
     margin: auto;
-    transform: translateX(120px); /* Mueve todo el contenedor más a la derecha */
 }
 
 /* Tarjetas de orden */
@@ -168,4 +167,48 @@ header {
     position: absolute;
     top: 15px;
     right: 15px;
+}
+
+/* Estilos de los botones Ver Más / Ver Menos */
+.boton-ver {
+    background: none;
+    border: none;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 10px; /* Separación de 1 cm (10px) entre los botones */
+    padding: 5px;
+}
+
+.boton-ver:hover {
+    text-decoration: none; /* Quita el subrayado al pasar el mouse */
+}
+
+/* Contenedor de los botones centrados */
+.botones-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilos de los botones Ver Más / Ver Menos */
+.boton-ver {
+    background: none;
+    border: none;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 10px; /* Separación de 1 cm entre los botones */
+    padding: 5px;
+}
+
+.boton-ver:hover {
+    text-decoration: none;
+}
+
+/* Contenedor de los botones centrados */
+.botones-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
