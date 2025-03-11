@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>MENÚ DE EMPLEADO</title>
+        <title>INSUMOS</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta

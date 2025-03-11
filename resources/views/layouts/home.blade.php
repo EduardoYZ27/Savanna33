@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>GESTIÓN</title>
+        <title>INICIO</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta

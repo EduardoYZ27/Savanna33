@@ -178,10 +178,13 @@ h3.title {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
+    transition: transform 0.2s ease-in-out; /* Agrega animación de zoom */
 }
 
+/* Efecto de zoom al pasar el cursor */
 .menu-card-sec a:hover {
-    background: #f0f0f0;
+    background: #EAD7B6;
+    transform: scale(1.1); /* Hace zoom al 110% */
 }
 
 /* Botón del menú */
@@ -194,4 +197,24 @@ h3.title {
     position: absolute;
     top: 15px;
     right: 15px;
+}
+
+td {
+    text-align: center; /* Centra los botones dentro de la celda */
+}
+
+td .btn {
+    display: inline-flex; /* Asegura que el ícono y el botón se alineen correctamente */
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px; /* Hace los botones más compactos */
+    font-size: 14px; /* Ajusta el tamaño del ícono */
+    border-radius: 5px;
+    width: 35px; /* Tamaño fijo para que no sean demasiado grandes */
+    height: 35px; /* Hace los botones cuadrados */
+}
+
+/* Asegurar que los iconos sean visibles */
+td .btn i {
+    font-size: 16px; /* Ajusta el tamaño del ícono */
 }

@@ -149,10 +149,13 @@ header {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
+    transition: transform 0.2s ease-in-out; /* Agrega animación de zoom */
 }
 
+/* Efecto de zoom al pasar el cursor */
 .menu-card-sec a:hover {
-    background: #f0f0f0;
+    background: #EAD7B6;
+    transform: scale(1.1); /* Hace zoom al 110% */
 }
 
 /* Botón del menú */
