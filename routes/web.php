@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//Controladores del login
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\MenuControlador;
 use App\Http\Controllers\VentaControlador;
 use App\Http\Controllers\ComprasControlador;
@@ -19,39 +23,19 @@ use App\Http\Controllers\MostrarInsumosControlador;
 use App\Http\Controllers\ProductosVentasControlador;
 use App\Http\Controllers\InsumosProductosControlador;
 use App\Http\Controllers\OrdenControlador;
-use App\Http\Controllers\Auth\LoginController;
-
-
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrdenController;
+use App\Http\Controllers\Auth\LoginController;
+//Rutas Login
+Route::get('/', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/', function () {
-    return view('index');
+// Ruta para homeMenu
+Route::middleware(['auth'])->group(function () {
+    Route::get('/homeMenu', [HomeController::class, 'index'])->name('homeMenu');
 });
 
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/homeMenu', function () {
-    return view('homeMenu');
-})->middleware('auth');
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+// Rutas que no movi saludos
 Route::resource('home', InsumosControlador::class);
 Route::resource('homeInsumosCompras', InsumosComprasControlador::class);
 Route::resource('homeCategorias', CategoriaControlador::class);
@@ -59,11 +43,10 @@ Route::resource('homeProductos', ProductosControlador::class);
 Route::get('/mostrarInsumos/{id}', [ProductosControlador::class, 'mostrarInsumosForm'])->name('mostrarInsumosForm');
 Route::resource('homeProductosVentas', ProductosVentasControlador::class);
 Route::resource('homeInventario', InventarioControlador::class);
-Route::resource('inventarioInsumo',InventarioInsumoControlador::class);
+//Route::resource('inventarioInsumo',InventarioInsumoControlador::class);
 Route::resource('homeInsumosProductos', InsumosProductosControlador::class);
 Route::resource('homeProductos', ProductosControlador::class);
-Route::resource('homeMenu', MenuControlador::class);
-Route::resource('homePublico', PublicoControlador::class);
+//Route::resource('homePublico', PublicoControlador::class);
 Route::resource('homeMenuPub', MenuPubControlador::class);
 Route::resource('homeUbicacion', UbicacionControlador::class);
 Route::resource('homeUnidadMedidas', UnidadMedidasControlador::class);
@@ -78,16 +61,11 @@ Route::post('homeOrdenCobrarMesa', [OrdenControlador::class, 'cobrarMesa'])->nam
 Route::post('/insumosproductos/store', [InsumosProductosControlador::class, 'store'])->name('insumosproductos.store');
 Route::delete('/insumosproductos/{id}', [InsumosProductosControlador::class, 'destroy'])->name('insumosproductos.destroy');
 Route::put('/editarInsumos/{id}', [InsumosProductosControlador::class, 'editarInsumos'])->name('editarInsumos');
-Route::resource('homeEmpleado', EmpleadoControlador::class);
+//Route::resource('homeEmpleado', EmpleadoControlador::class);
 Route::post('/habilitar-deshabilitar/{id}', [InsumosComprasControlador::class,'habilitarDeshabilitar'])->name('habilitarDeshabilitar');
 
 Route::post('/homeInventario/inventarioInicial', [InventarioControlador::class, 'inventarioInicial'])->name('homeInventario.inventarioInicial');
 Route::get('/homeInventario/totalComprasInsumo/{fecha}/{ID_Insumo}', [InventarioControlador::class, 'totalComprasInsumo'])->name('homeInventario.totalComprasInsumo');
-
-
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
 
 // Ruta para mostrar la vista de órdenes
 Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index');
@@ -112,4 +90,3 @@ Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index')
 Route::get('/ordenes/mesa1', function () {
     return view('Ordenes.darmesa');
 })->name('ordenes.darmesa');
-

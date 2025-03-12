@@ -7,22 +7,18 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * Constructor para aplicar el middleware de autenticación
      */
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Muestra el dashboard de la aplicación
      */
     public function index()
     {
-        return view('../homeMenu');
+        return view('menu.index'); // Sin '../', Laravel busca automáticamente en resources/views/
     }
 }

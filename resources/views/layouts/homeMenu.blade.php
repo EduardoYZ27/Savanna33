@@ -20,7 +20,7 @@
     
     
     @if (Auth::check())
-    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+    <form id="logout-form" action="{{ route('logout') }}" method="GET">
         @csrf
         <button type="submit" class="btn btn-logout">
             Cerrar sesión <i class="fas fa-door-open ml-2"></i>

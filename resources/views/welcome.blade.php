@@ -16,7 +16,14 @@
                 <h4>Iniciar Sesión</h4>
             </div>
             <div class="login-body">
-                <form action="{{ route('login') }}" method="POST">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                   </div>
+                @endif
+                <form action="{{ route('login.post') }}" method="POST">
                     @csrf
                     <div class="input-group">
                         <label for="number">Número de empleado</label>
