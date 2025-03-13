@@ -195,3 +195,43 @@ h3.title {
     top: 15px;
     right: 15px;
 }
+
+
+.btn-mover {
+    position: relative;  /* Mueve el botón sin afectar a otros */
+    left: 8cm;          /* Lo desplaza 5 cm a la derecha */
+    z-index: 1000;      /* Asegura que esté por encima de otros elementos */
+}
+
+
+/* Botón de Regresar */
+.img-atras {
+    position: absolute;
+    top: 20px;  /* Ajusta la posición desde arriba */
+    left: 20px; /* Ajusta la posición desde la izquierda */
+    width: 40px; /* Tamaño del botón */
+    z-index: 1100; /* Para que esté por encima de otros elementos */
+    left: 30cm; /* Lo mueve más a la derecha */
+    margin-top: 6.5cm;
+}
+
+/* Botón "Agregar Nueva Orden" */
+.btn-agregar-orden {
+    position: absolute;
+    top: 20px; /* Alineado con el botón de regresar */
+    left: 31cm; /* Lo mueve más a la derecha */
+    padding: 6px 10px; /* Tamaño del botón */
+    font-size: 14px; /* Tamaño de texto */
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    z-index: 1100; /* Para que esté por encima de otros elementos */
+    margin-top: 6.6cm;
+}
+
+/* Efecto hover para "Agregar Nueva Orden" */
+.btn-agregar-orden:hover {
+    background-color: black;
+    color: white;
+}
