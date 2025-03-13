@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/Productos/homeProductos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <header>
@@ -22,7 +23,7 @@
         <a href="{{ url('homeMenu') }}"><i class="fa fa-home"></i> Inicio</a>
         <a href="{{ url('homeInsumosCompras') }}"><i class="fa fa-shopping-cart"></i> Compras</a>
         <a href="{{ url('homeInventario') }}"><i class="fa fa-list-alt"></i> Inventario</a>
-        <a href="{{ url('homeOrden') }}"><i class="fa fa-dollar"></i> Órdenes</a>
+        <a href="{{ url('homeOrden') }}"><i class="fa fa-shopping-cart"></i> Órdenes</a>
         <a href="{{ url('homeVenta') }}"><i class="fa fa-dollar"></i> Ventas</a>
         <a href="{{ url('home') }}"><i class="fa fa-archive"></i> Insumos</a>
         <a href="{{ url('homeProductos') }}"><i class="fa fa-cubes"></i> Productos</a>
@@ -58,7 +59,7 @@
         </script>
     @endif
 
-    <br><br>
+    <br>
 
     <div class="table-responsive">
         <table class="table">
@@ -78,13 +79,15 @@
                         <td> {{$productos->Categoria->nombre}} </td>
                         <td>
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$productos->id}}">
-                                EDITAR
+                                <i class="fa fa-pencil"></i> <!-- Ícono de lápiz -->
                             </button>
+
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$productos->id}}">
-                                ELIMINAR
+                                <i class="fa fa-trash"></i> <!-- Ícono de bote de basura -->
                             </button>
+
                             <button type="button" class="btn btn-info btn-insumos" data-toggle="modal" data-target="#agregarInsumosModal{{$productos->id}}">
-                                INSUMOS
+                                <i class="fa fa-cubes"></i> <!-- Ícono para Insumos (manteniendo el estilo) -->
                             </button>
                         </td>
                     </tr>
