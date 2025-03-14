@@ -60,28 +60,45 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($insumos as $insumos)
-                    <tr>
-                        <td> {{$insumos->nombre}} </td>
-                        <td> {{$insumos->descripcion}} </td>
-                        <td> {{$insumos->unidadMedida->nombre}} </td>
-                        <td> {{$insumos->estado}} </td>
-                        <td>
-    @if($insumos->estado != 'Deshabilitado')
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$insumos->id}}">
-            <i class="fa fa-pencil"></i> <!-- Ícono de lápiz -->
-        </button>
+    @foreach($insumos as $insumo)
+        <tr>
+            <td> {{$insumo->nombre}} </td>
+            <td> {{$insumo->descripcion}} </td>
+            <td> {{$insumo->unidadMedida->nombre}} </td>
+            <td>
+                {{$insumo->estado}}
 
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$insumos->id}}">
-            <i class="fa fa-trash"></i> <!-- Ícono de bote de basura -->
-        </button>
-    @endif
-</td>
+                @if($insumo->estado == 'Deshabilitado')
+                    <i class="fa fa-times-circle text-danger alerta-insumo" 
+                       data-toggle="tooltip" 
+                       title="❌ Se ha agotado"
+                       data-nombre="{{ $insumo->nombre }}" 
+                       data-mensaje="se ha agotado">
+                    </i>
+                @elseif($insumo->estado == 'Habilitado')
+                    <i class="fa fa-exclamation-triangle text-warning alerta-insumo" 
+                       data-toggle="tooltip" 
+                       title="⚠️ Está por agotarse"
+                       data-nombre="{{ $insumo->nombre }}" 
+                       data-mensaje="está por agotarse">
+                    </i>
+                @endif
 
-                    </tr>
-                    @include('insumos.info')
-                @endforeach
-            </tbody>
+            </td>
+            <td>
+                @if($insumo->estado != 'Deshabilitado')
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$insumo->id}}">
+                        <i class="fa fa-pencil"></i> 
+                    </button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$insumo->id}}">
+                        <i class="fa fa-trash"></i> 
+                    </button>
+                @endif
+            </td>
+        </tr>
+    @endforeach
+</tbody>
+
         </table>
     </div>
 
@@ -91,5 +108,25 @@
 <!-- Scripts necesarios -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/menuSecciones.js') }}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Activar tooltips de Bootstrap
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // Agregar evento click a todos los iconos de alerta
+        document.querySelectorAll('.alerta-insumo').forEach(function(icono) {
+            icono.addEventListener('click', function() {
+                let nombre = this.getAttribute('data-nombre');
+                let mensaje = this.getAttribute('data-mensaje');
+
+                alert("⚠️ Atención: El insumo '" + nombre + "' " + mensaje + ".");
+            });
+        });
+    });
+</script>
+
 
 @endsection
