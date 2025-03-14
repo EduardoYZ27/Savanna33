@@ -90,7 +90,3 @@ Route::get('/ordenes', [OrdenController::class, 'index'])->name('ordenes.index')
 Route::get('/ordenes/mesa1', function () {
     return view('Ordenes.darmesa');
 })->name('ordenes.darmesa');
-
-Route::post('/orden/cobrar', [OrdenController::class, 'cobrarOrden'])->name('orden.cobrar');
-
-
