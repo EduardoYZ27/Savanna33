@@ -40,25 +40,22 @@
         @endif
     </h3>
 
-<!-- Botón para regresar -->
-<a href="{{ url('homeOrden') }}">
-    <img src="{{ asset('imagenes/regresar.jpg') }}" alt="Regresar" class="img-atras">
-</a>
+    <!-- Botón para regresar -->
+    <a href="{{ url('homeOrden') }}">
+        <img src="{{ asset('imagenes/regresar.jpg') }}" alt="Regresar" class="img-atras">
+    </a>
 
-<!-- Botón para agregar orden -->
-<button type="button" class="btn btn-primary btn-agregar-orden" data-toggle="modal" data-target="#createOrden">
-    AGREGAR NUEVA ORDEN
-</button>
+    <!-- Botón para agregar orden -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createOrden">
+        AGREGAR NUEVA ORDEN
+    </button>
 
     @php
     $totalMesa = 0.00;
         if($numero < 9){
             if(count($ordenes) > 0){
                 $totalMesa = (new \App\Http\Controllers\OrdenControlador)->getTotalMesa($numero);
-                echo '<a class="btn btn-primary btn-mover" data-toggle="modal" data-target="#cobrarMesa{{$numero}}">
-   COBRAR TODAS LAS ÓRDENES
-</a>
-';
+                echo '<a class="btn btn-primary" data-toggle="modal" data-target="#cobrarMesa'.$numero.'">COBRAR TODAS LAS ORDENES</a>';
             }
         }
     @endphp
