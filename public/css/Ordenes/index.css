@@ -59,11 +59,12 @@ header {
 .orders {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Centra los elementos */
     gap: 20px;
     padding: 20px;
-    max-width: 1400px;
+    max-width: 1400px; /* Ajusta el ancho total para 4 tarjetas por fila */
     margin: auto;
+    transform: translateX(120px); /* Mueve todo el contenedor más a la derecha */
 }
 
 /* Tarjetas de orden */
@@ -148,13 +149,10 @@ header {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out; /* Agrega animación de zoom */
 }
 
-/* Efecto de zoom al pasar el cursor */
 .menu-card-sec a:hover {
-    background: #EAD7B6;
-    transform: scale(1.1); /* Hace zoom al 110% */
+    background: #f0f0f0;
 }
 
 /* Botón del menú */
@@ -167,48 +165,4 @@ header {
     position: absolute;
     top: 15px;
     right: 15px;
-}
-
-/* Estilos de los botones Ver Más / Ver Menos */
-.boton-ver {
-    background: none;
-    border: none;
-    font-size: 16px;
-    text-decoration: underline;
-    cursor: pointer;
-    margin: 0 10px; /* Separación de 1 cm (10px) entre los botones */
-    padding: 5px;
-}
-
-.boton-ver:hover {
-    text-decoration: none; /* Quita el subrayado al pasar el mouse */
-}
-
-/* Contenedor de los botones centrados */
-.botones-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-/* Estilos de los botones Ver Más / Ver Menos */
-.boton-ver {
-    background: none;
-    border: none;
-    font-size: 16px;
-    text-decoration: underline;
-    cursor: pointer;
-    margin: 0 10px; /* Separación de 1 cm entre los botones */
-    padding: 5px;
-}
-
-.boton-ver:hover {
-    text-decoration: none;
-}
-
-/* Contenedor de los botones centrados */
-.botones-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }

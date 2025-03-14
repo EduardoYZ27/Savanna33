@@ -55,6 +55,7 @@
       <div class="modal-body">
        ¿ESTAS SEGURO DE ELIMINAR EL REGISTRO <strong>{{$categoria->nombre}} ?</strong>
       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="sumbit" class="btn btn-primary">Confirmar</button>
       </div>
     </form>

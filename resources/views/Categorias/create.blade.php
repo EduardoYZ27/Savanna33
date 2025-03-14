@@ -30,6 +30,7 @@
         
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="sumbit" class="btn btn-primary">Guardar</button>
       </div>
 

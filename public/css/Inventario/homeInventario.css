@@ -119,13 +119,10 @@ header {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out; /* Agrega animación de zoom */
 }
 
-/* Efecto de zoom al pasar el cursor */
 .menu-card-sec a:hover {
-    background: #EAD7B6;
-    transform: scale(1.1); /* Hace zoom al 110% */
+    background: #f0f0f0;
 }
 
 /* Botón del menú */
@@ -139,31 +136,3 @@ header {
     top: 15px;
     right: 15px;
 }
-
-td {
-    position: relative; /* Permite posicionar el botón sin afectar el tamaño de la celda */
-}
-
-td .btn-success {
-    margin-left: -18cm; /* Mueve el botón 5 cm a la derecha */
-    margin-top: -0.10cm; /* Mueve el botón 2 cm hacia arriba */
-    position: relative; /* Permite el ajuste de la posición */
-    background: transparent; /* Hace que el fondo sea transparente */
-    border: none; /* Elimina el borde */
-    color: green; /* Color del icono */
-    font-size: 16px; /* Tamaño del icono */
-    transition: transform 0.2s ease-in-out; /* Agrega una animación suave */
-}
-
-/* Usa Font Awesome para el icono de lápiz */
-td .btn-success::before {
-    content: "\f304"; /* Código Unicode del icono de lápiz en Font Awesome */
-    font-family: "Font Awesome 5 Free"; /* Asegura que use Font Awesome */
-    font-weight: 900; /* Estilo del icono */
-}
-
-/* Efecto de zoom al pasar el cursor */
-td .btn-success:hover {
-    transform: scale(1.2); /* Aumenta el tamaño del icono */
-}
-

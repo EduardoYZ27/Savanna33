@@ -51,8 +51,7 @@ h3.title {
 
 /* Contenedor Principal */
 .container {
-    width: 50%; /* Reduce el ancho del contenedor */
-    max-height: 1000px; /* Ajusta la altura máxima (puedes reducirlo aún más) */
+    width: 80%;
     margin: auto;
     background: white;
     padding: 20px;
@@ -61,20 +60,13 @@ h3.title {
     margin-top: 1cm;
 }
 
-
-.botones-container {
-    display: flex; /* Alinea los botones horizontalmente */
-    align-items: center; /* Asegura que estén alineados verticalmente */
-    justify-content: center; /* Centra los botones en el contenedor */
-    gap: 10px; /* Espacio entre los botones */
-    margin-bottom: 10px; /* Espacio debajo de los botones */
-}
-
+/* Botón de Regresar */
 .img-atras {
-    width: 40px; /* Mantiene el tamaño del botón */
-    cursor: pointer;
-    margin-right: 21.5cm; /* Mueve el botón 15 cm a la izquierda */
-    position: relative; /* Permite el ajuste sin afectar otros elementos */
+    display: inline-block;
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    margin-left: -24.3cm; /* Mueve el botón 5 cm a la izquierda */
+    margin-top: 0.1cm;  /* Mueve el botón 1 cm hacia abajo */
+    position: relative;
 }
 
 /* Tabla */
@@ -114,12 +106,14 @@ h3.title {
 }
 
 
+/* Estilo del botón "Agregar Producto" */
+/* Estilo del botón más pequeño */
 .btn-primary {
     background-color: green;  /* Color de fondo */
     color: white;             /* Color del texto */
     position: relative;
     margin-top: 0.3cm;
-    margin-left: -10cm;
+    margin-left: -23cm;
     border: none;             /* Quitar borde */
     padding: 5px 10px;        /* Reducir tamaño del botón */
     font-size: 14px;          /* Hacer la fuente más pequeña */
@@ -184,13 +178,10 @@ h3.title {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out; /* Agrega animación de zoom */
 }
 
-/* Efecto de zoom al pasar el cursor */
 .menu-card-sec a:hover {
-    background: #EAD7B6;
-    transform: scale(1.1); /* Hace zoom al 110% */
+    background: #f0f0f0;
 }
 
 /* Botón del menú */
@@ -203,24 +194,4 @@ h3.title {
     position: absolute;
     top: 15px;
     right: 15px;
-}
-
-td {
-    text-align: center; /* Centra los botones dentro de la celda */
-}
-
-td .btn {
-    display: inline-flex; /* Asegura que el ícono y el botón se alineen correctamente */
-    align-items: center;
-    justify-content: center;
-    padding: 5px 8px; /* Hace los botones más compactos */
-    font-size: 14px; /* Ajusta el tamaño del ícono */
-    border-radius: 5px;
-    width: 35px; /* Tamaño fijo para que no sean demasiado grandes */
-    height: 35px; /* Hace los botones cuadrados */
-}
-
-/* Asegurar que los iconos sean visibles */
-td .btn i {
-    font-size: 16px; /* Ajusta el tamaño del ícono */
 }
