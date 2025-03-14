@@ -29,8 +29,7 @@ class AuthController extends Controller
             'password.required' => 'La contraseña es obligatoria.',
         ]);
 
-
-       $usuario = Usuario::where('numero_empleado', $request->number)->first();
+        $usuario = Usuario::where('numero_empleado', $request->number)->first();
 
         if (!$usuario || !Hash::check($request->password, $usuario->password)) {
             return back()->withErrors(['message' => 'Número de empleado o contraseña incorrectos']);
@@ -38,7 +37,12 @@ class AuthController extends Controller
 
         Auth::login($usuario, $request->has('remember'));
 
-        return redirect()->route('homeMenu');
+        // Redirige según el rol
+        if ($usuario->rol === 'Admin') {
+            return redirect()->route('homeMenu');
+        } else {
+            return redirect()->route('homeTrabajador');
+        }
     }
 
     public function logout()

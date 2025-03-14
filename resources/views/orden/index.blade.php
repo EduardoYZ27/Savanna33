@@ -1,6 +1,16 @@
 @extends('layouts.home')
 
 @section('content')
+@if (Auth::check())
+    <form id="logout-form" action="{{ route('logout') }}" method="GET">
+        @csrf
+        <button type="submit" class="btn btn-logout">
+            Cerrar sesión <i class="fas fa-door-open ml-2"></i>
+        </button>
+    </form>
+    @endif
+
+    @yield('content')
 
 <!-- Agrega las referencias a Bootstrap y jQuery antes de cerrar el cuerpo del documento -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
