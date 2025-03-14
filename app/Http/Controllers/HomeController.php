@@ -21,4 +21,8 @@ class HomeController extends Controller
     {
         return view('menu.index'); // Sin '../', Laravel busca automáticamente en resources/views/
     }
+    public function trabajador()
+{
+    return view('trabajador.index'); // Asegúrate de que el nombre coincida con el archivo en resources/views/
+}
 }

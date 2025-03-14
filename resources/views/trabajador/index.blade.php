@@ -31,21 +31,13 @@
     <!-- Menú desplegable -->
     <div class="menu-card-sec" id="menuPrincipal-sec">
         <a href="javascript:void()" onclick="closeMenu()"></a>
-        <a href="{{ url('homeMenu') }}"><i class="fa fa-home"></i> Inicio</a>
-        <a href="{{ url('homeInsumosCompras') }}"><i class="fa fa-shopping-cart"></i> Compras</a>
-        <a href="{{ url('homeInventario') }}"><i class="fa fa-list-alt"></i> Inventario</a>
-        <a href="{{ url('homeOrden') }}"><i class="fa fa-shopping-cart"></i> Órdenes</a>
-        <a href="{{ url('homeVenta') }}"><i class="fa fa-dollar"></i> Ventas</a>
-        <a href="{{ url('home') }}"><i class="fa fa-archive"></i> Insumos</a>
-        <a href="{{ url('homeProductos') }}"><i class="fa fa-cubes"></i> Productos</a>
-        <a href="{{ url('homeCategorias') }}"><i class="fa fa-tags"></i> Categorías</a>
-        <a href="{{ url('homeUnidadMedidas') }}"><i class="fa fa-balance-scale"></i> Unidades de medida</a> 
+        <a href="{{ url('homeTrabajador') }}"><i class="fa fa-shopping-cart"></i> Órdenes</a> 
     </div>
 </header>
 
 <div class="title-container">
     <h2 class="title">BIENVENIDO A LA SECCIÓN DE ÓRDENES</h2>
-    <a href="{{ url('homeMenu') }}">
+    <a href="{{ url('homeTrabajador') }}">
         <img src="{{ asset('imagenes/regresar.jpg') }}" alt="Regresar" class="img-atras">
     </a>
 </div>

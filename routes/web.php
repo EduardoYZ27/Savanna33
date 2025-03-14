@@ -35,6 +35,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/homeMenu', [HomeController::class, 'index'])->name('homeMenu');
 });
 
+//ruta para Trabajador
+Route::middleware(['auth'])->group(function () {
+    Route::get('/homeMenu', [HomeController::class, 'index'])->name('homeMenu');
+    Route::get('/homeTrabajador', [HomeController::class, 'trabajador'])->name('homeTrabajador'); // Nueva ruta
+});
+
 // Rutas que no movi saludos
 Route::resource('home', InsumosControlador::class);
 Route::resource('homeInsumosCompras', InsumosComprasControlador::class);
